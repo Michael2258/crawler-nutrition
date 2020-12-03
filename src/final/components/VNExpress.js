@@ -4,18 +4,18 @@ import { Row, Col } from 'antd';
 import data from '../data/TuoiTreData.json';
 import Pagination from '../components/Pagination';
 
-TuoiTre.propTypes = {
+VNExpress.propTypes = {
     setPosts: PropTypes.func,
 };
 
 const TOTAL = 15;
 const itemEachPage = 5;
 
-function TuoiTre(props) {
+function VNExpress(props) {
     const { setPosts, currentPosts, posts, currentPage, postsPerPage, paginationHandler } = props;
 
     const postHandler = () => {
-        setPosts(data.tuoitre);
+        setPosts(data.vnexpress);
     }
 
     useEffect(() => {
@@ -39,15 +39,13 @@ function TuoiTre(props) {
                 ))}
             </Row>
 
-            {currentPosts.length <= 5 ? null : (
-                <Pagination
-                    postsPerPage={postsPerPage}
-                    totalPosts={posts.length}
-                    paginationHandler={paginationHandler}
-                />
-            )}
+            <Pagination
+                postsPerPage={postsPerPage}
+                totalPosts={posts.length}
+                paginationHandler={paginationHandler}
+            />
         </div>
     );
 }
 
-export default React.memo(TuoiTre);
+export default React.memo(VNExpress);

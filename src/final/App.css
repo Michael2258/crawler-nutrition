@@ -18,3 +18,14 @@
     justify-content: center;
     align-items: center;
 }
+
+/* Pagination */
+.pagination > ul {
+    list-style: none;
+    display: flex;
+    width: 100px;
+}
+
+.pagination > ul > li {
+    margin-right: 30px;
+}

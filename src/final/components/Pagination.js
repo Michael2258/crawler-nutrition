@@ -3,6 +3,7 @@ import {
     BrowserRouter as Router,
     Link
   } from "react-router-dom";
+import { Row, Col } from 'antd';
 
 function Pagination(props) {
     const { postsPerPage, totalPosts, paginationHandler } = props;
@@ -13,19 +14,24 @@ function Pagination(props) {
     }
 
     return (
-        <nav>
-            <ul>
-                {pageNumber.map(number => (
-                    <li key={number}>
-                        <Router>
-                            <Link onClick={() => paginationHandler(number)} to={`/tuoitre/:${number}`}>
-                                {number}
-                            </Link>
-                        </Router>
-                    </li>
-                ))}
-            </ul> 
-        </nav>
+        <Row className="row-pagination">
+            <Col span={12} offset={6}>
+            
+                <nav className="pagination">
+                    <ul>
+                        {pageNumber.map(number => (
+                            <li key={number}>
+                                <Router>
+                                    <Link style={{fontSize: '1.4rem'}} onClick={() => paginationHandler(number)} to={`/tuoitre/:${number}`}>
+                                        {number}
+                                    </Link>
+                                </Router>
+                            </li>
+                        ))}
+                    </ul> 
+                </nav>
+            </Col>
+        </Row>
     );
 }
 

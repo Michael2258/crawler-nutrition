@@ -14,6 +14,8 @@ import './App.css';
 
 import TuoiTre from './components/TuoiTre';
 import AboutPage from './components/About';
+import DanTri from './components/DanTri';
+import VNExpress from './components/VNExpress';
 
 const { Header, Sider, Content } = Layout;
 
@@ -89,10 +91,24 @@ function App() {
                             <AboutPage/>
                         </Route>
                         <Route exact path="/dantri">
-                            <h1>Hello 2</h1>
+                            <DanTri 
+                                setPosts={setPosts} 
+                                currentPosts={currentPosts}
+                                posts={posts}
+                                currentPage={currentPage}
+                                postsPerPage={postsPerPage}
+                                paginationHandler={paginationHandler}
+                            />
                         </Route>
                         <Route exact path="/vnexpress">
-                            <h1>Hello 3</h1>
+                            <VNExpress 
+                                setPosts={setPosts} 
+                                currentPosts={currentPosts}
+                                posts={posts}
+                                currentPage={currentPage}
+                                postsPerPage={postsPerPage}
+                                paginationHandler={paginationHandler}
+                            />
                         </Route>
                         <Route exact path="/tuoitre">
                             <TuoiTre 
